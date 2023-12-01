@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicHome</title>
+</head>
+<body>
+    <h1>MicHome</h1>
+    
+    <!-- Display MicEvents -->
+    <ul th:if="${micEvents}">
+        <li th:each="micEvent : ${micEvents}" th:text="${micEvent.description}"></li>
+    </ul>
+
+    <!-- Navigation links -->
+    <a th:href="@{/micadd}">Add Event</a>
+    <a th:href="@{/micedit}">Edit Event</a>
+    <a th:href="@{/micdel}">Delete Event</a>
+</body>
+</html>
